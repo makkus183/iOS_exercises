@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Ue3-Vorgabe' target in the 'Ue3-Vorgabe' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
