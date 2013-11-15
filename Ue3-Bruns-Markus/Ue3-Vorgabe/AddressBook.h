@@ -20,7 +20,7 @@
 - (void)addCard:(AddressCard*)card;
 - (void)removeCard:(AddressCard*)card;
 - (void)sortByLastname;
-- (void)searchCardByLastname;
+- (AddressCard*)searchCardByLastname:(NSString*)lastname;
 - (BOOL)saveToFile:(NSString*)path;
 + (id)addressBookWithFile:(NSString*)path;
 

@@ -66,22 +66,18 @@
     }
     [ask release];
     [hobby release];
-    [card release];
+
     
     [self.book addCard:card];
+    [card autorelease];
 }
 
 - (void)lookupCard {
     NSString *searchName = [IOHelper readLineWithMessage:@"Suchname:"];
     // TODO: implement card search
     AddressCard *searchedCard;
-    [IOHelper printLineWithFormat:@"Sie suchen nach '%@'.", searchName];
-    for (AddressCard *card in self.book.addresscards) {
-        if ([card.lastname isEqualToString:searchName]) {
-            searchedCard = card;
-            [IOHelper printLineWithFormat:[NSString stringWithFormat:@"Vorname: %@", card.firstname]];
-        }
-    }
+    searchedCard = [self.book searchCardByLastname:searchName];
+    [self printCard:searchedCard];
 
     // TODO: if card is found, ask what to do with current card
     NSString *ask = @"(F)reund/in hinzufügen, (L)öschen oder (Z)urück?";
@@ -103,21 +99,8 @@
 - (void)printBook {
     // TODO: print out all cards
     NSLog(@"Size of book %lu", (unsigned long)[self.book.addresscards count]);
-    NSString *seperator = @"+-----------------------------------";
     for (AddressCard *card in self.book.addresscards) {
-        [IOHelper printLineWithFormat:seperator];
-        [IOHelper printLineWithFormat:[NSString stringWithFormat:@"| Vorname: %@", card.firstname]];
-        [IOHelper printLineWithFormat:[NSString stringWithFormat:@"| Nachname: %@", card.lastname]];
-        [IOHelper printLineWithFormat:@"| Hobbys:"];
-        if ([card.hobbyList count] > 0) {
-            
-            for (NSString *hobby in card.hobbyList) {
-                [IOHelper printLineWithFormat:[NSString stringWithFormat:@"|    %@", hobby]];
-            }
-        } else {
-            [IOHelper printLineWithFormat:@"|   none"];
-        }
-        [IOHelper printLineWithFormat:seperator];
+        [self printCard:card];
     }
 }
 
@@ -126,13 +109,24 @@
 }
 
 - (void)deleteCard:(AddressCard*)card {
-    int index = 0;
-    for (AddressCard *currentCard in self.book.addresscards) {
-        if ([currentCard.lastname isEqualToString:card.lastname]) {
-            [self.book.addresscards removeObjectAtIndex:index];
+    [self.book removeCard:card];
+}
+
+- (void)printCard:(AddressCard*)card {
+    NSString *seperator = @"+-----------------------------------";
+    [IOHelper printLineWithFormat:seperator];
+    [IOHelper printLineWithFormat:[NSString stringWithFormat:@"| Vorname: %@", card.firstname]];
+    [IOHelper printLineWithFormat:[NSString stringWithFormat:@"| Nachname: %@", card.lastname]];
+    [IOHelper printLineWithFormat:@"| Hobbys:"];
+    if ([card.hobbyList count] > 0) {
+        
+        for (NSString *hobby in card.hobbyList) {
+            [IOHelper printLineWithFormat:[NSString stringWithFormat:@"|    %@", hobby]];
         }
-        index++;
+    } else {
+        [IOHelper printLineWithFormat:@"|   none"];
     }
+    [IOHelper printLineWithFormat:seperator];
 }
 
 

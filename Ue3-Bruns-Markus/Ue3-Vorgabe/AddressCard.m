@@ -32,12 +32,6 @@
 }
 - (void)removeHobby:(NSString*)hobby {
     [self.hobbyList removeObject:hobby];
-//    for (NSString *currentHobby in self.HobbyList) {
-//        if ([currentHobby isEqualToString:hobby]) {
-//            [self.HobbyList removeObject:hobby];
-//        }
-//    }
-
 }
 - (void)addFriend:(AddressCard*)card {
     [self.friendList addObject:card];
