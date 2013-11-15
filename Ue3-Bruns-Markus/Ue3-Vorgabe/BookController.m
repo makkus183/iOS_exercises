@@ -59,12 +59,14 @@
     AddressCard *card = [[AddressCard alloc] init];
     card.Vorname = [IOHelper readLineWithMessage:@"Vorname"];
     card.Nachname = [IOHelper readLineWithMessage:@"Nachname"];
-    char sel;
     NSString *ask = @"Hobby: (Abbruch mit (Q))";
-    while((sel = [IOHelper prompt:ask]) != 'q') {
-        [card.HobbyList addObject:[IOHelper readLineWithMessage:ask]];
+    NSString *hobby;
+    while(![(hobby = [IOHelper readLineWithMessage:ask]) isEqualToString:@"q"]) {
+        [card addHobby:hobby];
     }
-    
+    [ask release];
+    [hobby release];
+    [card release];
     
     [self.book addCard:card];
 }

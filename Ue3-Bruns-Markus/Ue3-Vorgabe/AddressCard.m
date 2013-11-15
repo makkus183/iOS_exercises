@@ -31,11 +31,12 @@
     [self.HobbyList addObject:hobby];
 }
 - (void)removeHobby:(NSString*)hobby {
-    for (NSString *currentHobby in self.HobbyList) {
-        if ([currentHobby isEqualToString:hobby]) {
-            [self.HobbyList removeObject:hobby];
-        }
-    }
+    [self.HobbyList removeObject:hobby];
+//    for (NSString *currentHobby in self.HobbyList) {
+//        if ([currentHobby isEqualToString:hobby]) {
+//            [self.HobbyList removeObject:hobby];
+//        }
+//    }
 
 }
 - (void)addFriend:(AddressCard*)card {
