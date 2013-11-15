@@ -24,9 +24,9 @@
 - (void)run {
     // TODO: read in address book from file @"book.archive"
     self.book = [[AddressBook alloc] init];
-    self.book.Addresskarten = [AddressBook addressBookWithFile:@"book.archive"];
-    if([self.book.Addresskarten count] == 0) {
-        self.book.Addresskarten = [[NSMutableArray alloc] init];
+    self.book.addresscards = [AddressBook addressBookWithFile:@"book.archive"];
+    if([self.book.addresscards count] == 0) {
+        self.book.addresscards = [[NSMutableArray alloc] init];
     }
     // main loop
 
@@ -57,8 +57,8 @@
     [IOHelper printLineWithFormat:@"Neue Karte anlegen:"];
     // TODO: read in a new address card and add it to the book
     AddressCard *card = [[AddressCard alloc] init];
-    card.Vorname = [IOHelper readLineWithMessage:@"Vorname"];
-    card.Nachname = [IOHelper readLineWithMessage:@"Nachname"];
+    card.firstname = [IOHelper readLineWithMessage:@"Vorname"];
+    card.lastname = [IOHelper readLineWithMessage:@"Nachname"];
     NSString *ask = @"Hobby: (Abbruch mit (Q))";
     NSString *hobby;
     while(![(hobby = [IOHelper readLineWithMessage:ask]) isEqualToString:@"q"]) {
@@ -76,10 +76,10 @@
     // TODO: implement card search
     AddressCard *searchedCard;
     [IOHelper printLineWithFormat:@"Sie suchen nach '%@'.", searchName];
-    for (AddressCard *card in self.book.Addresskarten) {
-        if ([card.Nachname isEqualToString:searchName]) {
+    for (AddressCard *card in self.book.addresscards) {
+        if ([card.lastname isEqualToString:searchName]) {
             searchedCard = card;
-            [IOHelper printLineWithFormat:[NSString stringWithFormat:@"Vorname: %@", card.Vorname]];
+            [IOHelper printLineWithFormat:[NSString stringWithFormat:@"Vorname: %@", card.firstname]];
         }
     }
 
@@ -102,16 +102,16 @@
 
 - (void)printBook {
     // TODO: print out all cards
-    NSLog(@"Size of book %lu", (unsigned long)[self.book.Addresskarten count]);
+    NSLog(@"Size of book %lu", (unsigned long)[self.book.addresscards count]);
     NSString *seperator = @"+-----------------------------------";
-    for (AddressCard *card in self.book.Addresskarten) {
+    for (AddressCard *card in self.book.addresscards) {
         [IOHelper printLineWithFormat:seperator];
-        [IOHelper printLineWithFormat:[NSString stringWithFormat:@"| Vorname: %@", card.Vorname]];
-        [IOHelper printLineWithFormat:[NSString stringWithFormat:@"| Nachname: %@", card.Nachname]];
+        [IOHelper printLineWithFormat:[NSString stringWithFormat:@"| Vorname: %@", card.firstname]];
+        [IOHelper printLineWithFormat:[NSString stringWithFormat:@"| Nachname: %@", card.lastname]];
         [IOHelper printLineWithFormat:@"| Hobbys:"];
-        if ([card.HobbyList count] > 0) {
+        if ([card.hobbyList count] > 0) {
             
-            for (NSString *hobby in card.HobbyList) {
+            for (NSString *hobby in card.hobbyList) {
                 [IOHelper printLineWithFormat:[NSString stringWithFormat:@"|    %@", hobby]];
             }
         } else {
@@ -127,9 +127,9 @@
 
 - (void)deleteCard:(AddressCard*)card {
     int index = 0;
-    for (AddressCard *currentCard in self.book.Addresskarten) {
-        if ([currentCard.Nachname isEqualToString:card.Nachname]) {
-            [self.book.Addresskarten removeObjectAtIndex:index];
+    for (AddressCard *currentCard in self.book.addresscards) {
+        if ([currentCard.lastname isEqualToString:card.lastname]) {
+            [self.book.addresscards removeObjectAtIndex:index];
         }
         index++;
     }

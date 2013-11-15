@@ -10,12 +10,12 @@
 #import "AddressCard.h"
 
 @interface AddressBook : NSObject <NSCoding> {
-    NSMutableArray *Addresskarten;
+    NSMutableArray *addresscards;
     
     
 }
 
-@property(retain) NSMutableArray *Addresskarten;
+@property(retain) NSMutableArray *addresscards;
 
 - (void)addCard:(AddressCard*)card;
 - (void)removeCard:(AddressCard*)card;

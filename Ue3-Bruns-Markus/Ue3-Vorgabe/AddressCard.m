@@ -10,28 +10,28 @@
 
 @implementation AddressCard
 
-@synthesize Vorname;
-@synthesize Nachname;
-@synthesize Strasse;
-@synthesize Hausnummer;
-@synthesize Postleitzahl;
-@synthesize Ort;
-@synthesize HobbyList;
-@synthesize FriendList;
+@synthesize firstname;
+@synthesize lastname;
+@synthesize street;
+@synthesize streetnumber;
+@synthesize zip;
+@synthesize city;
+@synthesize hobbyList;
+@synthesize friendList;
 
 -(id)init{
     if(self = [super init]) {
-        self.HobbyList = [[NSMutableArray alloc] init];
-        self.FriendList = [[NSMutableArray alloc] init];
+        self.hobbyList = [[NSMutableArray alloc] init];
+        self.friendList = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 - (void)addHobby:(NSString*)hobby {
-    [self.HobbyList addObject:hobby];
+    [self.hobbyList addObject:hobby];
 }
 - (void)removeHobby:(NSString*)hobby {
-    [self.HobbyList removeObject:hobby];
+    [self.hobbyList removeObject:hobby];
 //    for (NSString *currentHobby in self.HobbyList) {
 //        if ([currentHobby isEqualToString:hobby]) {
 //            [self.HobbyList removeObject:hobby];
@@ -40,34 +40,34 @@
 
 }
 - (void)addFriend:(AddressCard*)card {
-    [self.FriendList addObject:card];
+    [self.friendList addObject:card];
 }
 
 - (void)removeFriend:(AddressCard*)card {
-    [self.FriendList removeObjectIdenticalTo:card];
+    [self.friendList removeObjectIdenticalTo:card];
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
-    [encoder encodeObject:Vorname forKey:@"Vorname"];
-    [encoder encodeObject:Nachname forKey:@"Nachname"];
-    [encoder encodeObject:Strasse forKey:@"Strasse"];
-    [encoder encodeObject:Hausnummer forKey:@"Hausnummer"];
-    [encoder encodeObject:Postleitzahl forKey:@"Postleitzahl"];
-    [encoder encodeObject:Ort forKey:@"Ort"];
-    [encoder encodeObject:HobbyList forKey:@"HobbyList"];
-    [encoder encodeObject:FriendList forKey:@"FriendList"];
+    [encoder encodeObject:firstname forKey:@"firstname"];
+    [encoder encodeObject:lastname forKey:@"lastname"];
+    [encoder encodeObject:street forKey:@"street"];
+    [encoder encodeObject:streetnumber forKey:@"streetnumber"];
+    [encoder encodeObject:zip forKey:@"zip"];
+    [encoder encodeObject:city forKey:@"city"];
+    [encoder encodeObject:hobbyList forKey:@"hobbyList"];
+    [encoder encodeObject:friendList forKey:@"friendList"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
-        self.Vorname = [decoder decodeObjectForKey:@"Vorname"];
-        self.Nachname = [decoder decodeObjectForKey:@"Nachname"];
-        self.Strasse = [decoder decodeObjectForKey:@"Strasse"];
-        self.Hausnummer = [decoder decodeObjectForKey:@"Hausnummer"];
-        self.Postleitzahl = [decoder decodeObjectForKey:@"Postleitzahl"];
-        self.Ort = [decoder decodeObjectForKey:@"Ort"];
-        self.HobbyList = [decoder decodeObjectForKey:@"HobbyList"];
-        self.FriendList = [decoder decodeObjectForKey:@"FriendList"];
+        self.firstname = [decoder decodeObjectForKey:@"firstname"];
+        self.lastname = [decoder decodeObjectForKey:@"lastname"];
+        self.street = [decoder decodeObjectForKey:@"street"];
+        self.streetnumber = [decoder decodeObjectForKey:@"streetnumber"];
+        self.zip = [decoder decodeObjectForKey:@"zip"];
+        self.city = [decoder decodeObjectForKey:@"city"];
+        self.hobbyList = [decoder decodeObjectForKey:@"hobbyList"];
+        self.friendList = [decoder decodeObjectForKey:@"friendList"];
 
     }
     return self;

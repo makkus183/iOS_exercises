@@ -10,19 +10,19 @@
 
 @implementation AddressBook
     
-    @synthesize Addresskarten;
+    @synthesize addresscards;
 
 
 -(id)init{
     if(self = [super init]) {
-        self.Addresskarten = [[NSMutableArray alloc] init];
+        self.addresscards = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 - (void)addCard:(AddressCard*)card {
     
-    [self.Addresskarten addObject:card];
+    [self.addresscards addObject:card];
 }
 - (void)removeCard:(AddressCard*)card {
     
@@ -34,7 +34,7 @@
     
 }
 - (BOOL)saveToFile:(NSString*)path {
-    return [NSKeyedArchiver archiveRootObject:self.Addresskarten toFile:path];
+    return [NSKeyedArchiver archiveRootObject:self.addresscards toFile:path];
 }
 
 + (id)addressBookWithFile:(NSString*)path {
@@ -42,12 +42,12 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
-    [encoder encodeObject:self.Addresskarten forKey:@"Adresskarten"];
+    [encoder encodeObject:self.addresscards forKey:@"Adresskarten"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
-        self.Addresskarten = [decoder decodeObjectForKey:@"Adresskarten"];
+        self.addresscards = [decoder decodeObjectForKey:@"Adresskarten"];
     }
     return self;
 }

@@ -9,24 +9,24 @@
 #import <Foundation/Foundation.h>
 
 @interface AddressCard : NSObject <NSCoding> {
-    NSString *Vorname;
-    NSString *Nachname;
-    NSString *Strasse;
-    NSNumber *Hausnummer;
-    NSNumber *Postleitzahl;
-    NSString *Ort;
-    NSMutableArray *HobbyList;
-    NSMutableArray *FriendList;
+    NSString *firstname;
+    NSString *lastname;
+    NSString *street;
+    NSNumber *streetnumber;
+    NSNumber *zip;
+    NSString *city;
+    NSMutableArray *hobbyList;
+    NSMutableArray *friendList;
 }
 
-@property(retain) NSString *Vorname;
-@property(retain) NSString *Nachname;
-@property(retain) NSString *Strasse;
-@property(retain) NSNumber *Hausnummer;
-@property(retain) NSNumber *Postleitzahl;
-@property(retain) NSString *Ort;
-@property(retain) NSMutableArray *HobbyList;
-@property(retain) NSMutableArray *FriendList;
+@property(retain) NSString *firstname;
+@property(retain) NSString *lastname;
+@property(retain) NSString *street;
+@property(retain) NSNumber *streetnumber;
+@property(retain) NSNumber *zip;
+@property(retain) NSString *city;
+@property(retain) NSMutableArray *hobbyList;
+@property(retain) NSMutableArray *friendList;
 
 - (void)addHobby:(NSString*)hobby;
 - (void)removeHobby:(NSString*)hobby;
