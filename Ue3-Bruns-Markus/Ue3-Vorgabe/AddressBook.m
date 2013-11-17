@@ -26,6 +26,9 @@
     [self sortByLastname];
 }
 - (void)removeCard:(AddressCard*)card {
+    for (AddressCard *cardContainingFriend in self.addresscards) {
+        [cardContainingFriend removeFriend:card];
+    }
     [self.addresscards removeObjectIdenticalTo:card];
 }
 - (void)sortByLastname {
@@ -36,6 +39,7 @@
     NSArray *sortedArray;
     sortedArray = [self.addresscards sortedArrayUsingDescriptors:sortDescriptors];
     self.addresscards = [sortedArray mutableCopy];
+    [sortDescriptor release];
 }
 - (AddressCard*)searchCardByLastname:(NSString*)lastname {
     AddressCard *cardwithLastname;
@@ -63,6 +67,11 @@
         self.addresscards = [decoder decodeObjectForKey:@"Adresskarten"];
     }
     return self;
+}
+
+- (void)dealloc {
+    [addresscards release];
+    [super dealloc];
 }
 
 @end

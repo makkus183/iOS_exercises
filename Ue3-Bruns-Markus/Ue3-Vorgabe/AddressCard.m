@@ -67,4 +67,10 @@
     return self;
 }
 
+- (void)dealloc {
+    [hobbyList release];
+    [friendList release];
+    [super dealloc];
+}
+
 @end
