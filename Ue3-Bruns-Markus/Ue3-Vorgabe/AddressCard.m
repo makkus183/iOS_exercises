@@ -21,8 +21,8 @@
 
 -(id)init{
     if(self = [super init]) {
-        self.hobbyList = [[NSMutableArray alloc] init];
-        self.friendList = [[NSMutableArray alloc] init];
+        self.hobbyList = [[[NSMutableArray alloc] init] autorelease];
+        self.friendList = [[[NSMutableArray alloc] init] autorelease];
     }
     return self;
 }

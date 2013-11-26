@@ -15,7 +15,7 @@
 
 -(id)init{
     if(self = [super init]) {
-        self.addresscards = [[NSMutableArray alloc] init];
+        self.addresscards = [[[NSMutableArray alloc] init] autorelease];
     }
     return self;
 }
@@ -40,9 +40,10 @@
     sortedArray = [self.addresscards sortedArrayUsingDescriptors:sortDescriptors];
     self.addresscards = [sortedArray mutableCopy];
     [sortDescriptor release];
+
 }
 - (AddressCard*)searchCardByLastname:(NSString*)lastname {
-    AddressCard *cardwithLastname;
+    AddressCard *cardwithLastname = nil;
     for (AddressCard *card in self.addresscards) {
         if ([card.lastname isEqualToString:lastname]) {
             cardwithLastname = card;
