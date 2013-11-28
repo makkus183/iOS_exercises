@@ -19,10 +19,8 @@
 
 -(id)init{
     if(self = [super init]) {
-//        self.eurToUsdRate = 1.3479;
-        self.eurToUsdRate = 2;
-//        self.eurToGbpRate = 0.8371;
-        self.eurToGbpRate = 4;
+        self.eurToUsdRate = 1.3479;
+        self.eurToGbpRate = 0.8371;
     }
     return self;
 }
