@@ -269,7 +269,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
+                    <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN">
+                        <barButtonItem key="leftBarButtonItem" id="Jr5-N0-rJB">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Qj-cF-txA">
+                                <rect key="frame" x="16" y="5" width="91" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Addressbook"/>
+                                <connections>
+                                    <action selector="backToRoot:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="3Tz-zr-mv2"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="city" destination="Y0q-MI-eKQ" id="NDY-4a-elW"/>
                         <outlet property="firstname" destination="G9L-rb-9Us" id="ee7-SG-Trw"/>

@@ -22,6 +22,7 @@
 @implementation MasterViewController
 
 @synthesize addresscards;
+@synthesize addressbook;
 
 - (void)awakeFromNib
 {
@@ -38,6 +39,7 @@
 //    self.navigationItem.rightBarButtonItem = addButton;
 
     AppDelegate *app = [UIApplication sharedApplication].delegate;
+    self.addressbook = app.book;
     self.addresscards = app.book.addresscards;
 }
 
@@ -62,7 +64,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
 //    NSDate *object = _objects[indexPath.row];
     AddressCard *card = self.addresscards[indexPath.row];
     cell.textLabel.text = [card.firstname length] != 0 || [card.lastname length] != 0  ? [NSString stringWithFormat:@"%@ %@", card.firstname, card.lastname] : @"";
@@ -113,7 +114,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tableView reloadData]; // to reload selected cell
+    // to get the Addresscards sorted and updated
+    self.addresscards = self.addressbook.addresscards;
+    [self.tableView reloadData];
 }
 
 - (NSString *)getFormattedAddressForDetailLabel:(NSString *)street withStreetnumber:(NSNumber *)streetnumber withZip:(NSNumber *)zip andCity:(NSString *)city {

@@ -18,6 +18,10 @@
 
 #pragma mark - Managing the detail item
 
+- (IBAction)backToRoot:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 - (void)setAddresscard:(AddressCard *)card
 {
     if (self.card != card) {
