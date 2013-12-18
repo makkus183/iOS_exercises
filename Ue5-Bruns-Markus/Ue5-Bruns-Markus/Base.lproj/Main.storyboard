@@ -67,22 +67,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Addressbook" id="tQt-TN-PWz">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="9vi-0w-744">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zaS-Ag-lbm">
-                                <rect key="frame" x="244" y="6" width="71" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Add">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Zwh-Uu-jOv" kind="push" id="lIE-Eo-yGw"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="backBarButtonItem" title="Addressbuch" id="9HO-UJ-fD3"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8Pl-Sb-8td">
+                            <connections>
+                                <segue destination="Zwh-Uu-jOv" kind="push" identifier="" id="HrS-Qo-XJz"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -227,23 +216,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Addresscard" id="fWe-fi-DCj">
-                        <barButtonItem key="rightBarButtonItem" id="ive-Bf-QgD">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="naM-In-mgF">
-                                <rect key="frame" x="244" y="6" width="71" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addNewAddresscardToAddressbook:" destination="Zwh-Uu-jOv" eventType="touchUpInside" id="iPg-9U-XSw"/>
-                                    <segue destination="Ah7-4n-0Wa" kind="push" identifier="addToDetail" id="4Oj-eP-dgn"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="OaM-81-1kZ">
+                            <connections>
+                                <action selector="addNewAddresscardToAddressbook:" destination="Zwh-Uu-jOv" id="Elt-BI-en1"/>
+                                <segue destination="Ah7-4n-0Wa" kind="push" identifier="showCard" id="QqT-ZQ-xE1"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -333,22 +310,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN">
-                        <barButtonItem key="leftBarButtonItem" id="Jr5-N0-rJB">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Qj-cF-txA">
-                                <rect key="frame" x="5" y="6" width="91" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Addressbook">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backToRoot:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="3Tz-zr-mv2"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Addressbook" id="VRE-kk-fTh">
+                            <connections>
+                                <action selector="backToRoot:" destination="Ah7-4n-0Wa" id="3iQ-gx-aNS"/>
+                            </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="6gq-bV-fs3"/>
                     </navigationItem>
                     <connections>
                         <outlet property="city" destination="Y0q-MI-eKQ" id="NDY-4a-elW"/>
@@ -361,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="440"/>
+            <point key="canvasLocation" x="1110" y="444"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -370,6 +337,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="4Oj-eP-dgn"/>
+        <segue reference="jUr-3t-vfg"/>
     </inferredMetricsTieBreakers>
 </document>
