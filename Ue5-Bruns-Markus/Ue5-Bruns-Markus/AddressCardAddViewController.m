@@ -7,7 +7,6 @@
 //
 
 #import "AddressCardAddViewController.h"
-#import "DetailViewController.h"
 #import "AppDelegate.h"
 #import "AddressBook.h"
 
@@ -59,7 +58,8 @@
     return NO;
 }
 
-- (IBAction)addNewAddresscardToAddressbook:(id)sender {
+- (void)addNewAddresscardToAddressbook {
+    NSLog(@"saving card..");
     self.card = [[AddressCard alloc] init];
     self.card.firstname = [[self.firstname text] length] != 0 ? [self.firstname text] : @"";
     self.card.lastname = [[self.lastname text] length] != 0 ? [self.lastname text] : @"";
@@ -72,8 +72,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([[segue identifier] isEqualToString:@"addToDetail"]) {
-        [[segue destinationViewController] setAddresscard:self.card];
+    if([[segue identifier] isEqualToString:@"addToMaster"]) {
+        [self addNewAddresscardToAddressbook];
     }
 }
 @end

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		286F60EA185A11A0009CB2C7 /* AddressCardAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 286F60E9185A11A0009CB2C7 /* AddressCardAddViewController.m */; };
+		2898106D186ECA3000B9EAF3 /* AddresscardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2898106C186ECA3000B9EAF3 /* AddresscardViewController.m */; };
+		28981070187830C600B9EAF3 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2898106F187830C600B9EAF3 /* Constants.m */; };
+		289810731878320D00B9EAF3 /* AddresscardAddFriendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289810721878320D00B9EAF3 /* AddresscardAddFriendsController.m */; };
 		28F42053184F80E9001AF3E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F42052184F80E9001AF3E9 /* Foundation.framework */; };
 		28F42055184F80E9001AF3E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F42054184F80E9001AF3E9 /* CoreGraphics.framework */; };
 		28F42057184F80E9001AF3E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F42056184F80E9001AF3E9 /* UIKit.framework */; };
@@ -16,7 +19,6 @@
 		28F42063184F80E9001AF3E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F42062184F80E9001AF3E9 /* AppDelegate.m */; };
 		28F42066184F80E9001AF3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F42064184F80E9001AF3E9 /* Main.storyboard */; };
 		28F42069184F80E9001AF3E9 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F42068184F80E9001AF3E9 /* MasterViewController.m */; };
-		28F4206C184F80E9001AF3E9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F4206B184F80E9001AF3E9 /* DetailViewController.m */; };
 		28F4206E184F80E9001AF3E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F4206D184F80E9001AF3E9 /* Images.xcassets */; };
 		28F42075184F80E9001AF3E9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F42074184F80E9001AF3E9 /* XCTest.framework */; };
 		28F42076184F80E9001AF3E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F42052184F80E9001AF3E9 /* Foundation.framework */; };
@@ -40,6 +42,12 @@
 /* Begin PBXFileReference section */
 		286F60E8185A11A0009CB2C7 /* AddressCardAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressCardAddViewController.h; sourceTree = "<group>"; };
 		286F60E9185A11A0009CB2C7 /* AddressCardAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressCardAddViewController.m; sourceTree = "<group>"; };
+		2898106B186ECA3000B9EAF3 /* AddresscardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddresscardViewController.h; sourceTree = "<group>"; };
+		2898106C186ECA3000B9EAF3 /* AddresscardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddresscardViewController.m; sourceTree = "<group>"; };
+		2898106E1878301200B9EAF3 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		2898106F187830C600B9EAF3 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		289810711878320D00B9EAF3 /* AddresscardAddFriendsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddresscardAddFriendsController.h; sourceTree = "<group>"; };
+		289810721878320D00B9EAF3 /* AddresscardAddFriendsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddresscardAddFriendsController.m; sourceTree = "<group>"; };
 		28F4204F184F80E9001AF3E9 /* Ue5-Bruns-Markus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ue5-Bruns-Markus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F42052184F80E9001AF3E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		28F42054184F80E9001AF3E9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,8 +61,6 @@
 		28F42065184F80E9001AF3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28F42067184F80E9001AF3E9 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		28F42068184F80E9001AF3E9 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		28F4206A184F80E9001AF3E9 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		28F4206B184F80E9001AF3E9 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		28F4206D184F80E9001AF3E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		28F42073184F80E9001AF3E9 /* Ue5-Bruns-MarkusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ue5-Bruns-MarkusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F42074184F80E9001AF3E9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -131,12 +137,16 @@
 				28F42061184F80E9001AF3E9 /* AppDelegate.h */,
 				28F42062184F80E9001AF3E9 /* AppDelegate.m */,
 				28F42064184F80E9001AF3E9 /* Main.storyboard */,
+				2898106B186ECA3000B9EAF3 /* AddresscardViewController.h */,
+				2898106C186ECA3000B9EAF3 /* AddresscardViewController.m */,
+				289810711878320D00B9EAF3 /* AddresscardAddFriendsController.h */,
+				289810721878320D00B9EAF3 /* AddresscardAddFriendsController.m */,
+				2898106E1878301200B9EAF3 /* Constants.h */,
+				2898106F187830C600B9EAF3 /* Constants.m */,
 				286F60E8185A11A0009CB2C7 /* AddressCardAddViewController.h */,
 				286F60E9185A11A0009CB2C7 /* AddressCardAddViewController.m */,
 				28F42067184F80E9001AF3E9 /* MasterViewController.h */,
 				28F42068184F80E9001AF3E9 /* MasterViewController.m */,
-				28F4206A184F80E9001AF3E9 /* DetailViewController.h */,
-				28F4206B184F80E9001AF3E9 /* DetailViewController.m */,
 				28F4206D184F80E9001AF3E9 /* Images.xcassets */,
 				28F42059184F80E9001AF3E9 /* Supporting Files */,
 			);
@@ -273,9 +283,11 @@
 				28F42063184F80E9001AF3E9 /* AppDelegate.m in Sources */,
 				286F60EA185A11A0009CB2C7 /* AddressCardAddViewController.m in Sources */,
 				28F42069184F80E9001AF3E9 /* MasterViewController.m in Sources */,
+				289810731878320D00B9EAF3 /* AddresscardAddFriendsController.m in Sources */,
 				28F4208E184F8177001AF3E9 /* AddressBook.m in Sources */,
+				2898106D186ECA3000B9EAF3 /* AddresscardViewController.m in Sources */,
 				28F4205F184F80E9001AF3E9 /* main.m in Sources */,
-				28F4206C184F80E9001AF3E9 /* DetailViewController.m in Sources */,
+				28981070187830C600B9EAF3 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,8 +12,7 @@
 
 @interface AddressCardAddViewController : UIViewController <UITextFieldDelegate>
 
-
-- (IBAction)addNewAddresscardToAddressbook:(id)sender;
+- (void)addNewAddresscardToAddressbook;
 
 @property (weak, nonatomic) IBOutlet UITextField *firstname;
 @property (weak, nonatomic) IBOutlet UITextField *lastname;

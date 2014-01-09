@@ -7,8 +7,7 @@
 //
 
 #import "MasterViewController.h"
-
-#import "DetailViewController.h"
+#import "AddressCardViewController.h"
 #import "AddressCardAddViewController.h"
 
 #import "AppDelegate.h"
@@ -34,9 +33,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-//    self.navigationItem.rightBarButtonItem = addButton;
 
     AppDelegate *app = [UIApplication sharedApplication].delegate;
     self.addressbook = app.book;
@@ -64,7 +60,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-//    NSDate *object = _objects[indexPath.row];
     AddressCard *card = self.addresscards[indexPath.row];
     cell.textLabel.text = [card.firstname length] != 0 || [card.lastname length] != 0  ? [NSString stringWithFormat:@"%@ %@", card.firstname, card.lastname] : @"";
     cell.detailTextLabel.text = [self getFormattedAddressForDetailLabel:card.street withStreetnumber:card.streetnumber withZip:card.zip andCity:card.city];
@@ -105,17 +100,18 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showCard"]) {
+    if ([[segue identifier] isEqualToString:@"viewAddresscard"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         AddressCard *card = self.addresscards[indexPath.row];
-        [[segue destinationViewController] setAddresscard:card];
+        [[segue destinationViewController] viewAddresscard:card];
     }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    // to get the Addresscards sorted and updated
-    self.addresscards = self.addressbook.addresscards;
+    
+    [self.addressbook sortByLastname];
     [self.tableView reloadData];
 }
 

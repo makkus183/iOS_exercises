@@ -32,6 +32,7 @@
     [self.addresscards removeObjectIdenticalTo:card];
 }
 - (void)sortByLastname {
+    NSLog(@"sorting function executed");
     NSSortDescriptor *sortDescriptor;
     sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastname"
                                                  ascending:YES];
